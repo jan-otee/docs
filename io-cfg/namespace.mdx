@@ -1,0 +1,21 @@
+---
+title: "Namespace"
+description: "Configure your vPLC to pull any information from your namespace to drive control."
+---
+
+You can use the so-called namespace driver to capture any tags/objects/metrics from the pub-sub framework into a vPLC program to drive control. This includes data coming from other vPLCs (machine-to-machine communication), but is not limited to this use case. You can likewise capture statistical data, health and status information (think e.g. redundancy), or third party data sources (like weather or energy price forecast data published into the namespace via a REST client, etc.).
+
+In the top bar of your project browser pane, press the “Create an entity” button. Select “Driver configuration” from the drop-down menu in the “Type” field, then select "Namespace" from the drop-down menu in the “Driver” field. This will create a Namespace node in your project browser tree. Select the node to access the driver configuration.
+
+<img
+  className="block dark:hidden mx-auto"
+  src="/images/namespace-light.png"
+  alt="Namespace Driver Configuration Light"
+/>
+
+<img
+  className="hidden dark:block mx-auto"
+  src="/images/namespace-dark.png"
+  alt="Namespace Driver Configuration Dark"
+/>
+
