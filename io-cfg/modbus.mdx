@@ -21,7 +21,7 @@ The configuration happens in two steps, where the first one is the client config
 
 For the client configuration, use the topmost field to specify your device's name. Next, configure some more client settings (see table below) before setting up individual Modbus requests next.
 
-| Input Field           | Explanation                                                                                                                       |
+| Field Name            | Explanation                                                                                                                       |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
 | Invocation rate, ms   | The interval in milliseconds between sending of requests.                                                                         |
 | Request delay, ms     | The delay in milliseconds between the end of the previous response and the beginning of the next request to be sent, if needed.   |
@@ -42,7 +42,7 @@ The supported function codes are:
 
 For each request, you need to set the following input fields:
 
-| Input Field           | Explanation                                                                                                                                                                                   |
+| Field Name            | Explanation                                                                                                                                                                                   |
 |-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Slave ID              | The slave ID (unit ID) of the device that will receive the requests.                                                                                                                          |
 | Timeout, ms           | The request timeout in milliseconds, i.e., the time allowed for the server to respond before the client gives up.                                                                             |
