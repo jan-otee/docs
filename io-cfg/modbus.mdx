@@ -19,4 +19,35 @@ In the top bar of your project browser pane, press the “Create an entity” bu
 
 The configuration happens in two steps, where the first one is the client configuration itself, and the second one is the Modbus request configuration. You can create one or multiple clients, and within each client you can create one or multiple requests.
 
-As you set up your requests (click on a request header to expand or collapse it), you can map Modbus memory addresses to your own, user-defined symbols via the “Driver symbols” table for better readability and practical re-use throughout your project. In practice, when you assign a Modbus address to tags in your POUs or global variables, you will now be able to select the according symbols instead of working with the rather cryptic memory addresses directly.
+For the client configuration, use the topmost field to specify your device's name. Next, configure some more client settings (see table below) before setting up individual Modbus requests next.
+
+| Input Field           | Explanation                                                                                                                       |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Invocation rate, ms   | The interval in milliseconds between sending of requests.                                                                         |
+| Request delay, ms     | The delay in milliseconds between the end of the previous response and the beginning of the next request to be sent, if needed.   |
+| Remote IP address     | The IP address of the Modbus TCP server.                                                                                          |
+| Remote port number    | The port number that the Modbus TCP server is listening on, usually 502 or 1502.                                                  |
+
+As you set up your requests, also known as commands or messages (click on a request header to expand or collapse them), you can map Modbus memory addresses to your own, user-defined symbols via the “Driver symbols” table for better readability and practical re-use throughout your project. In practice, when you assign a Modbus address to tags in your POUs or global variables, you will now be able to select the according symbols instead of working with the rather cryptic memory addresses directly.
+
+The supported function codes are:
+* FC01: Read Coils
+* FC02: Read Input Discretes
+* FC03: Read Holding Registers
+* FC04: Read Input Registers
+* FC05: Write Single Coil
+* FC06: Write Single Register
+* FC15: Write Multiple Coils
+* FC16: Write Multiple Registers
+
+For each request, you need to set the following input fields:
+
+| Input Field           | Explanation                                                                                                                       |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| Slave ID   | The slave ID (unit ID) of the device that will receive the requests.                                                                         |
+| Timeout, ms     | The request timeout in milliseconds, i.e., the time allowed for the server to respond before the client gives up.   |
+| Number of channels     | The number of registers to be read/written.                                                                                         |
+| Start address    | The data offset of the first register requested. This is a 0-based offset from the first address of the corresponding data area.
+Example: Holding registers start at 40001, so a start address of 5 corresponds to register 40001 + 5 = 40006.                                                  |
+|Write on change | (Applies to function codes 5, 6, 15, and 16 only.) If checked, requests will only be sent when the linked variables change. Otherwise, requests will be sent according to the invocation rate as usual. |
+
