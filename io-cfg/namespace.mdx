@@ -19,3 +19,6 @@ In the top bar of your project browser pane, press the “Create an entity” bu
   alt="Namespace Driver Configuration Dark"
 />
 
+The Namespace driver configuration happens in two steps. First, hit the "Add a service" button and select the service (or device) in your namespace which you'd like to subscribe to and explore its namespace for metrics to be included in your control logic. In case you're setting up machine-to-machine communication between multiple vPLCs, select the other vPLC's runtime as the service here.
+
+In the second step, select a transmitter from the dropdown (for example, a transmitter for operational tags or system transmitters), then start adding metrics. For each metric, you can browse the specified namespace via the dropdown menu, where the data type gets automatically recognized and displayed for your information. As with all drivers, you can now reference these metrics from within your POUs' variables and thereby pulling any data from the wider namespace into the control layer.
