@@ -42,12 +42,13 @@ The supported function codes are:
 
 For each request, you need to set the following input fields:
 
-| Input Field           | Explanation                                                                                                                       |
-|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| Slave ID   | The slave ID (unit ID) of the device that will receive the requests.                                                                         |
-| Timeout, ms     | The request timeout in milliseconds, i.e., the time allowed for the server to respond before the client gives up.   |
-| Number of channels     | The number of registers to be read/written.                                                                                         |
-| Start address    | The data offset of the first register requested. This is a 0-based offset from the first address of the corresponding data area.
-Example: Holding registers start at 40001, so a start address of 5 corresponds to register 40001 + 5 = 40006.                                                  |
-|Write on change | (Applies to function codes 5, 6, 15, and 16 only.) If checked, requests will only be sent when the linked variables change. Otherwise, requests will be sent according to the invocation rate as usual. |
+| Input Field           | Explanation                                                                                                                                                                                   |
+|-----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Slave ID              | The slave ID (unit ID) of the device that will receive the requests.                                                                                                                          |
+| Timeout, ms           | The request timeout in milliseconds, i.e., the time allowed for the server to respond before the client gives up.                                                                             |
+| Number of channels    | The number of registers to be read/written.                                                                                                                                                   |
+| Start address         | This is a 0-based offset from the first address of the corresponding data area. Example: Holding registers start at 40001, so a start address of 5 corresponds to register 40001 + 5 = 40006. |
+|Write on change        | Applies to function codes 5, 6, 15, and 16 only. If checked, requests will only be sent when the linked variables change. Otherwise, they'll be sent as per the invocation rate as usual.     |
+
+Once the request settings have been filled in, the symbol table to the right will update according to the specified starting address and number of channels. These symbols, one for each register, will be used to link the Modbus registers to program variables. You can rename the symbols as desired and reference them from variables within your project's POUs.
 
