@@ -1,0 +1,22 @@
+---
+title: "Direct/Built-in I/O"
+description: "Configure your vPLC to communicate via built-in I/Os on your vPLC host device."
+---
+
+A growing number of PLC device manufacturers open their ecosystems for third party runtimes and other software components. Some of these devices feature on-board I/O pins, and you can configure your OTee runtime in a way that it can process these signals through the device's file system or process image directly. Here's how.
+
+In the top bar of your project browser pane, press the “Create an entity” button. Select “Driver configuration” from the drop-down menu in the “Type” field, then select "Direct I/O" from the drop-down menu in the “Driver” field. This will create a Direct I/O node in your project browser tree. Select the node to access the driver configuration.
+
+<img
+  className="block dark:hidden mx-auto"
+  src="/images/directio-light.png"
+  alt="Direct I/O Configuration Light"
+/>
+
+<img
+  className="hidden dark:block mx-auto"
+  src="/images/directio-dark.png"
+  alt="Direct I/O Configuration Dark"
+/>
+
+Consult your device manufacturer's technical documentation to find out how to best map their built-in I/O channels. OTee handles ASCII files (where typically one file represents one I/O channel) and binary files (or process images, where typically all I/O channels are included and separated by a particular offset that needs to be set in the configuration of this driver).
