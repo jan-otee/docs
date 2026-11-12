@@ -54,6 +54,7 @@
             "group": "Virtual PLC",
             "pages": [
               "virtual-plc/devices",
+              "virtual-plc/opc-ua-client",
               "virtual-plc/deployments",
               "virtual-plc/monitoring"
             ]
